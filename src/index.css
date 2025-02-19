@@ -1,13 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap');
-
-.gilda {
-  font-family: "Gilda Display", serif;
-}
+  
 
 body {
   background-color: #D4FFC2;
+  overflow-x: hidden;
 }
