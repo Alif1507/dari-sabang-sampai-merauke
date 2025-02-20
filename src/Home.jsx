@@ -1,6 +1,6 @@
 import { Link } from "react-router";
-import bggn from "/home/Desain tanpa judul (3) 1.png";
-import awan from "/home/Group 1.png";
+import bggn from "/home/image 11.png";
+import awan from "/home/Group 5.png";
 import pembats from "/home/Rectangle 18.png";
 import Carousel from "react-multi-carousel";
 import Gambar from "./component/Gambar";
@@ -10,18 +10,22 @@ import img3 from "/home/Rectangle 6.png";
 import img4 from "/home/Rectangle 7.png";
 import img5 from "/home/Rectangle 8.png";
 import "react-multi-carousel/lib/styles.css";
+import { motion } from "motion/react";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 function Home() {
   return (
     <>
-      <nav className="flex justify-between items-center mx-20 mt-10 gilda text-[#1D3B6B] text-xl font-gilda">
-        <div>
-          <h1>Nama Tim</h1>
-        </div>
-        <div>
+      <motion.nav
+        whileHover={{ scale: 1.1 }}
+        initial={{ scale: 1, opacity: 1, translateX: -120 }}
+        animate={{ scale: 1, opacity: 1, translateX: -120 }}
+        className="bottom-10 left-[50%] bg-[#A9C7FF] transform -translate-x-[50%] rounded-2xl py-2 px-6 gilda text-[#1D3B6B] text-xl font-gilda fixed z-40"
+      >
+        <div className="flex justify-center items-center">
           <ul className="flex gap-5 text-center font-thin">
             <li>
-              <Link to="#">About</Link>
+              <a href="#about">About</a>
             </li>
             <li>
               <Link to="#">Map</Link>
@@ -31,25 +35,34 @@ function Home() {
             </li>
           </ul>
         </div>
-      </nav>
-      <div className="gilda flex flex-col text-center justify-center mt-64 gap-10">
-        <div className="text-[#032356] text-3xl font-thin gilda">MULAI</div>
-        <div className="text-[#F5F5F5] text-6xl font-thin gilda">
-          <span className="text-[#1D3B6B]">PE</span>RJALANAN NUSANTARA
-        </div>
-      </div>
+      </motion.nav>
+      <Parallax pages={1}>
+        <ParallaxLayer sticky={{ start: 1, end: 3 }}>
+          <div className="gilda flex flex-col text-center justify-center mt-64 gap-10 font-gilda text-[#7B1010]">
+            <div className=" text-3xl font-thin gilda">MULAI</div>
+            <div className=" text-6xl font-thin gilda">
+              PERJALANAN NUSANTARA
+            </div>
+          </div>
+        </ParallaxLayer>
+      </Parallax>
       <div className="w-screen h-auto absolute top-0 -z-20">
         <img className="object-fit w-full h-full" src={bggn} alt="BG GUNUNG" />
       </div>
-      <div className="w-screen h-auto absolute top-0 -z-20">
+      <motion.div
+        initial={{ translateY: 0 }}
+        animate={{ translateY: -650 }}
+        transition={{ duration: 6, type: "spring", stiffness: 6 }}
+        className="w-[2990px] h-auto absolute -left-[500px] -top-[300px] z-50"
+      >
         <img className="object-fit w-full h-full" src={awan} alt="BG GUNUNG" />
-      </div>
+      </motion.div>
 
-      <div className="flex justify-center items-center gap-5 gilda mt-[270px] mr-24">
+      <div className="flex justify-center items-center gap-5 gilda mt-[300px] mr-24">
         <div className="bg-[#F5F5F5] h-[1px] w-20">.</div>
         <h1 className="text-[#F5F5F5] text-3xl">SCROLL</h1>
       </div>
-      <div className="h-[88px] w-[1px] bg-[#F5F5F5] absolute top-[800px] left-[760px] z-10">
+      <div className="h-[88px] w-[1px] bg-[#F5F5F5] absolute top-[790px] left-[760px] z-10 transform animate-bounce">
         .
       </div>
       <div className="mt-20">
@@ -58,7 +71,9 @@ function Home() {
 
       <section className="font-gilda">
         <div className="flex w-screen items-center justify-center">
-          <h1 className="text-5xl mb-24">About</h1>
+          <h1 id="about" className="text-5xl mb-24">
+            About
+          </h1>
         </div>
 
         <div>
