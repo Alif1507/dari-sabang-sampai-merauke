@@ -11,16 +11,23 @@ import img4 from "/home/Rectangle 7.png";
 import img5 from "/home/Rectangle 8.png";
 import "react-multi-carousel/lib/styles.css";
 import { motion } from "motion/react";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import LiquidChrome from "./component/LiquidChrome";
 
 function Home() {
   return (
     <>
       <motion.nav
-        whileHover={{ scale: 1.1 }}
-        initial={{ scale: 1, opacity: 1, translateX: -120 }}
-        animate={{ scale: 1, opacity: 1, translateX: -120 }}
-        className="bottom-10 left-[50%] bg-[#A9C7FF] transform -translate-x-[50%] rounded-2xl py-2 px-6 gilda text-[#1D3B6B] text-xl font-gilda fixed z-40"
+        whileHover={{ paddingRight: 30, paddingLeft: 30, translateX: -120 }}
+        initial={{
+          scale: 1,
+          opacity: 1,
+          translateX: -120,
+          paddingTop: 8,
+          paddingBottom: 8,
+          paddingRight: 16,
+          paddingLeft: 16,
+        }}
+        className="bottom-10 left-[50%] bg-[#A9C7FF] transform -translate-x-[50%] rounded-2xl  gilda text-[#1D3B6B] text-xl font-gilda fixed z-40"
       >
         <div className="flex justify-center items-center">
           <ul className="flex gap-5 text-center font-thin">
@@ -36,16 +43,10 @@ function Home() {
           </ul>
         </div>
       </motion.nav>
-      <Parallax pages={1}>
-        <ParallaxLayer sticky={{ start: 1, end: 3 }}>
-          <div className="gilda flex flex-col text-center justify-center mt-64 gap-10 font-gilda text-[#7B1010]">
-            <div className=" text-3xl font-thin gilda">MULAI</div>
-            <div className=" text-6xl font-thin gilda">
-              PERJALANAN NUSANTARA
-            </div>
-          </div>
-        </ParallaxLayer>
-      </Parallax>
+      <div className="gilda flex flex-col text-center justify-center mt-64 gap-10 font-gilda text-[#7B1010]">
+        <div className=" text-3xl font-thin gilda">MULAI</div>
+        <div className=" text-6xl font-thin gilda">PERJALANAN NUSANTARA</div>
+      </div>
       <div className="w-screen h-auto absolute top-0 -z-20">
         <img className="object-fit w-full h-full" src={bggn} alt="BG GUNUNG" />
       </div>
@@ -150,6 +151,17 @@ function Home() {
             menyenangkan{" "}
           </p>
           <h1 className="text-3xl">SELAMAT MENIKMATI PERJALANAN KALIAN</h1>
+        </div>
+      </section>
+
+      <section className="mt-28 h-screen">
+        <div style={{ width: "100%", height: "100%", position: "relative" }}>
+          <LiquidChrome
+            baseColor={[0.1, 0.1, 0.3]}
+            speed={0.4}
+            amplitude={0.6}
+            interactive={false}
+          />
         </div>
       </section>
     </>
