@@ -1,7 +1,6 @@
 import { Link } from "react-router";
 import bggn from "/home/image 11.png";
 import awan from "/home/Group 5.png";
-import pembats from "/home/Rectangle 18.png";
 import Carousel from "react-multi-carousel";
 import Gambar from "./component/Gambar";
 import img1 from "/home/Rectangle 4.png";
@@ -45,9 +44,9 @@ function Home() {
 
       <ParallaxProvider>
         <Parallax speed={20}>
-          <div className="gilda flex flex-col text-center justify-center lg:mt-60 2xl:mt-[600px] md:mt96 gap-10 font-gilda text-[#7B1010] max-sm:mt-56">
-            <div className=" text-3xl 2xl:text-4xl font-thin gilda">MULAI</div>
-            <div className=" text-5xl  2xl:text-7xl font-thin gilda">
+          <div className="gilda flex flex-col text-center justify-center  4k:mt-[500px] laptopL:mt-[320px] md:mt-[270px] gap-10 font-gilda text-[#7B1010] max-sm:mt-56">
+            <div className=" lg:text-3xl md:text-xl 4k:text-5xl font-thin gilda">MULAI</div>
+            <div className=" lg:text-5xl md:text-2xl  4k:text-8xl font-thin gilda">
               PERJALANAN NUSANTARA
             </div>
           </div>
@@ -60,16 +59,16 @@ function Home() {
         initial={{ translateY: 0 }}
         animate={{ translateY: -650 }}
         transition={{ duration: 6, type: "spring", stiffness: 6 }}
-        className="w-[2990px] h-auto absolute 2xl:w-[3700px] max-sm:w-[713px] max-sm:top-0 -left-[500px] -top-[350px] z-20"
+        className="w-[2990px] h-auto absolute 2xl:w-[3700px] max-sm:w-[713px]  max-sm:top-0 -left-[500px] -top-[550px] z-20"
       >
         <img className="object-fit w-full h-full" src={awan} alt="BG GUNUNG" />
       </motion.div>
 
-      <div className="flex justify-center items-center gap-5 gilda max-sm:mt-40 md:hidden lg:mt-[200px] mr-24 2xl:mt-[410px]">
+      <div className="flex justify-center items-center gap-5 4k:mt-[500px] laptopL:mt-[240px] md:-mt-16 gilda max-sm:mt-48 mr-24 ">
         <div className="bg-[#F5F5F5] h-[1px] w-20">.</div>
-        <h1 className="text-[#F5F5F5] text-3xl">SCROLL</h1>
+        <h1 className="text-[#F5F5F5] md:text-xl 4k:text-4xl">SCROLL</h1>
       </div>
-      <div className="h-[88px] w-[1px] text-white bg-[#F5F5F5] absolute top-[1240px] left-[50%] z-10 transform animate-bounce">
+      <div className="h-[88px] w-[1px] text-white bg-[#F5F5F5] absolute 4k:top-[1260px] laptopL:top-[750px] md:top-[370px] left-[50%] z-10 transform animate-bounce">
         .
       </div>
       <div className="mt-5 pembats 2xl:h-[400px]">
@@ -148,15 +147,15 @@ function Home() {
           </Carousel>
         </div>
 
-        <div className="flex flex-col justify-center items-center mt-20 gap-12 text-center">
-          <p className="text-center text-xl mx-72 max-sm:mx-10 md:mx-24">
+        <div className="flex flex-col justify-center items-center mt-32 gap-12  text-center ">
+          <p className="text-center laptopL:text-xl mx-72 max-sm:mx-10 md:mx-24">
             Perjalanan Nusantara membawa kalian memjelajahi berbagai pulau yang
             ada di indonesia ,dengan peta yang ada dibawah ini kalian bisa
             mengetahui budaya dari 38 provinsi, membuat pengetahuan anda
             menambah, kalian bisa belajar dan mengetahui hal baru dengan
             menyenangkan{" "}
           </p>
-          <h1 className="text-3xl">SELAMAT MENIKMATI PERJALANAN KALIAN</h1>
+          <h1 className="laptopL:text-3xl">SELAMAT MENIKMATI PERJALANAN KALIAN</h1>
         </div>
       </section>
 
