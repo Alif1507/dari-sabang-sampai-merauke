@@ -12,62 +12,68 @@ import img5 from "/home/Rectangle 8.png";
 import "react-multi-carousel/lib/styles.css";
 import { motion } from "motion/react";
 import LiquidChrome from "./component/LiquidChrome";
+import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 
 function Home() {
   return (
     <>
-      <motion.nav
-        whileHover={{ paddingRight: 30, paddingLeft: 30, translateX: -120 }}
-        initial={{
-          scale: 1,
-          opacity: 1,
-          translateX: -120,
-          paddingTop: 8,
-          paddingBottom: 8,
-          paddingRight: 16,
-          paddingLeft: 16,
-        }}
-        className="bottom-10 left-[50%] bg-[#A9C7FF] transform -translate-x-[50%] rounded-2xl  gilda text-[#1D3B6B] text-xl font-gilda fixed z-40"
+      <motion.h1
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 7 }}
+        className="absolute left-10 top-10 z-30 text-md font-gilda text-[#1D3B6B] 2xl:text-2xl max-sm:left-20"
       >
-        <div className="flex justify-center items-center">
-          <ul className="flex gap-5 text-center font-thin">
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <Link to="#">Map</Link>
-            </li>
-            <li className="bg-[#1D3B6B] py-1 rounded-2xl px-2 text-white font">
-              <Link to="#">Contact</Link>
-            </li>
-          </ul>
-        </div>
-      </motion.nav>
-      <div className="gilda flex flex-col text-center justify-center mt-64 gap-10 font-gilda text-[#7B1010]">
-        <div className=" text-3xl font-thin gilda">MULAI</div>
-        <div className=" text-6xl font-thin gilda">PERJALANAN NUSANTARA</div>
-      </div>
-      <div className="w-screen h-auto absolute top-0 -z-20">
-        <img className="object-fit w-full h-full" src={bggn} alt="BG GUNUNG" />
+        Dari Sabang Sampai Merauke
+      </motion.h1>
+
+      <motion.ul
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 7 }}
+        className="flex gap-5 text-center font-thin absolute right-10 top-10 z-30 text-md 2xl:text-2xl font-gilda text-[#1D3B6B] max-sm:hidden"
+      >
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <li>
+          <Link to="#">Map</Link>
+        </li>
+        <li className="bg-[#1D3B6B] py-1 rounded-2xl px-2 text-white font">
+          <Link to="#">Contact</Link>
+        </li>
+      </motion.ul>
+
+      <ParallaxProvider>
+        <Parallax speed={20}>
+          <div className="gilda flex flex-col text-center justify-center lg:mt-60 2xl:mt-[600px] md:mt96 gap-10 font-gilda text-[#7B1010] max-sm:mt-56">
+            <div className=" text-3xl 2xl:text-4xl font-thin gilda">MULAI</div>
+            <div className=" text-5xl  2xl:text-7xl font-thin gilda">
+              PERJALANAN NUSANTARA
+            </div>
+          </div>
+        </Parallax>
+      </ParallaxProvider>
+      <div className="w-screen h-auto absolute top-0 -z-20 max-sm:w-[713px] max-sm:h-[680px] max-sm:-left-72">
+        <img className="object-cover w-full h-full" src={bggn} alt="BG GUNUNG" />
       </div>
       <motion.div
         initial={{ translateY: 0 }}
         animate={{ translateY: -650 }}
         transition={{ duration: 6, type: "spring", stiffness: 6 }}
-        className="w-[2990px] h-auto absolute -left-[500px] -top-[300px] z-50"
+        className="w-[2990px] h-auto absolute 2xl:w-[3700px] max-sm:w-[713px] max-sm:top-0 -left-[500px] -top-[350px] z-20"
       >
         <img className="object-fit w-full h-full" src={awan} alt="BG GUNUNG" />
       </motion.div>
 
-      <div className="flex justify-center items-center gap-5 gilda mt-[300px] mr-24">
+      <div className="flex justify-center items-center gap-5 gilda max-sm:mt-40 md:hidden lg:mt-[200px] mr-24 2xl:mt-[410px]">
         <div className="bg-[#F5F5F5] h-[1px] w-20">.</div>
         <h1 className="text-[#F5F5F5] text-3xl">SCROLL</h1>
       </div>
-      <div className="h-[88px] w-[1px] bg-[#F5F5F5] absolute top-[790px] left-[760px] z-10 transform animate-bounce">
+      <div className="h-[88px] w-[1px] text-white bg-[#F5F5F5] absolute top-[1240px] left-[50%] z-10 transform animate-bounce">
         .
       </div>
-      <div className="mt-20">
-        <img className="object-cover w-screen" src={pembats} alt="" />
+      <div className="mt-5 pembats 2xl:h-[400px]">
+        .
       </div>
 
       <section className="font-gilda">
@@ -142,8 +148,8 @@ function Home() {
           </Carousel>
         </div>
 
-        <div className="flex flex-col justify-center items-center mt-20 gap-12">
-          <p className="text-center text-xl mx-72">
+        <div className="flex flex-col justify-center items-center mt-20 gap-12 text-center">
+          <p className="text-center text-xl mx-72 max-sm:mx-10 md:mx-24">
             Perjalanan Nusantara membawa kalian memjelajahi berbagai pulau yang
             ada di indonesia ,dengan peta yang ada dibawah ini kalian bisa
             mengetahui budaya dari 38 provinsi, membuat pengetahuan anda
